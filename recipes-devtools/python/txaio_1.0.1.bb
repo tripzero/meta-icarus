@@ -16,6 +16,10 @@ SRC_URI[txaio.md5sum] = "4fe1681ec20dec538034b0c4cc8a4afd"
 SRC_URI[txaio.sha256sum] = "c2ddbaf003c68f64ba1c79c70395555d6ccaee512213405447c06fb2c89f1c8a"
 
 
+DEPENDS_${PN} = "six \
+                python-distutils \
+"
+
 RDEPENDS_${PN} = "python \
                   python-distutils \
                   six \
