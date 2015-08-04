@@ -14,6 +14,12 @@ inherit distutils
 SRC_URI[md5sum] = "3bcbc00382a9d601fe4565216d4e7dc737d5f65e"
 SRC_URI[sha256sum] = "https://github.com/tavendo/AutobahnPython"
 
+DEPENDS_${PN} = "txaio \
+                 six \
+                 python-twisted \
+                 python-distutils \
+                "
+
 RDEPENDS_${PN} = "python \
                   python-datetime \
                   python-distutils \

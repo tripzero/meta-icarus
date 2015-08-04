@@ -14,7 +14,7 @@ SRC_URI[sha256sum] = "cfc328411ed52632ab8e7ae02cbc1422c51f5bd3abf919405ccf64d612
 
 S = "${WORKDIR}/Twisted-${PV}"
 
-inherit setuptools
+inherit distutils
 
 do_install_append() {
     # remove some useless files before packaging
@@ -42,6 +42,8 @@ PACKAGES =+ "\
     ${PN}-src \
     ${PN}-bin \
 "
+
+LDFLAGS_prepend = " -lpython2.7 "
 
 RDEPENDS_${PN} = "\
     ${PN}-bin \
