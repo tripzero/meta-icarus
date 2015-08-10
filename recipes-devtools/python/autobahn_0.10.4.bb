@@ -14,11 +14,11 @@ inherit distutils
 SRC_URI[md5sum] = "3bcbc00382a9d601fe4565216d4e7dc737d5f65e"
 SRC_URI[sha256sum] = "https://github.com/tavendo/AutobahnPython"
 
-DEPENDS_${PN} = "txaio \
-                 six \
-                 python-twisted \
-                 python-distutils \
-                "
+DEPENDS = "txaio \
+           six \
+           python-twisted \
+           python-distutils \
+          "
 
 RDEPENDS_${PN} = "python \
                   python-datetime \
@@ -28,6 +28,28 @@ RDEPENDS_${PN} = "python \
                   six \
                   txaio \ 
 "
+
+FILES_${PN} = " \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/__init__.py* \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/util.py* \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn-0.10.5-py2.7.egg/ \
+    "
+
+FILES_${PN}-twisted = " \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/twisted/*.py* \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/twisted \
+"
+
+FILES_${PN}-wamp = " \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/wamp/*.py* \
+    #${libdir}/${PYTHON_DIR}/site-packages/autobahn/wamp \
+"
+
+FILES_${PN}-websocket = " \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/websocket/*.py* \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/websocket \
+"
+
 
 RDEPENDS_${PN}_class-native = ""
 
