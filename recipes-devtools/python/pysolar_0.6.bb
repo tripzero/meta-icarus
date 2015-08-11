@@ -9,7 +9,7 @@ SRC_URI = "git://github.com/pingswept/pysolar;protocol=https;branch=master;name=
 SRCREV_pysolar = "37fcbf1551ea55216b02c5f99b3e7c579f878e85"
 
 S = "${WORKDIR}/git"
-inherit distutils
+inherit setuptools
 
 SRC_URI[md5sum] = "37fcbf1551ea55216b02c5f99b3e7c579f878e85"
 SRC_URI[sha256sum] = "https://github.com/pingswept/pysolar"

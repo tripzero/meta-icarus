@@ -1,1 +1,1 @@
-python deps go here
+python/nodejs deps go here

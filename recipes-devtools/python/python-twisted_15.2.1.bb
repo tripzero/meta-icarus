@@ -14,7 +14,7 @@ SRC_URI[sha256sum] = "cfc328411ed52632ab8e7ae02cbc1422c51f5bd3abf919405ccf64d612
 
 S = "${WORKDIR}/Twisted-${PV}"
 
-inherit distutils
+inherit setuptools
 
 do_install_append() {
     # remove some useless files before packaging
@@ -43,7 +43,13 @@ PACKAGES =+ "\
     ${PN}-bin \
 "
 
-LDFLAGS_prepend = " -lpython2.7 "
+LDFLAGS_prepend = " -lpython2.7 -pthread -Wl,-Bsymbolic-functions "
+SECURITY_CFLAGS = ""
+
+DEPENDS = "python-distutils \
+           python-zopeinterface \
+           python-json \
+"
 
 RDEPENDS_${PN} = "\
     ${PN}-bin \
@@ -55,9 +61,10 @@ RDEPENDS_${PN} = "\
     ${PN}-runner \
     ${PN}-web \
     ${PN}-words \
+    python-json \
 "
 
-RDEPENDS_${PN}-core = "python-core python-zopeinterface python-contextlib python-dev"
+RDEPENDS_${PN}-core = "python-core python-zopeinterface python-contextlib"
 RDEPENDS_${PN}-test = "${PN}"
 RDEPENDS_${PN}-conch = "${PN}-core ${PN}-protocols"
 RDEPENDS_${PN}-lore = "${PN}-core"
@@ -185,6 +192,8 @@ ${libdir}/${PYTHON_DIR}/site-packages/twisted/python/*.py* \
 ${libdir}/${PYTHON_DIR}/site-packages/twisted/plugins/*.py* \
 ${libdir}/${PYTHON_DIR}/site-packages/twisted/topfiles \
 ${libdir}/${PYTHON_DIR}/site-packages/Twisted*egg-info \
+${libdir}/${PYTHON_DIR}/site-packages/twisted/logger \
+${libdir}/${PYTHON_DIR}/site-packages/twisted/positioning \
 "
 
 FILES_${PN}-lore = " \

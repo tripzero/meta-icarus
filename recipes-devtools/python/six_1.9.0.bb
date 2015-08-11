@@ -14,7 +14,7 @@ SRC_URI[six.sha256sum] = "e24052411fc4fbd1f672635537c3fc2330d9481b18c0317695b462
 S = "${WORKDIR}/six-${PV}"
 LIC_FILES_CHKSUM = "file://${WORKDIR}/six-1.9.0/LICENSE;md5=6f00d4a50713fa859858dd9abaa35b21"
 
-inherit distutils
+inherit setuptools
 
 RDEPENDS_${PN} = "python"
 

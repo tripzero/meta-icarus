@@ -9,7 +9,7 @@ SRCREV_autobahn = "${AUTOREV}"
 
 S = "${WORKDIR}/git"
 
-inherit distutils
+inherit setuptools
 
 SRC_URI[md5sum] = "3bcbc00382a9d601fe4565216d4e7dc737d5f65e"
 SRC_URI[sha256sum] = "https://github.com/tavendo/AutobahnPython"
@@ -30,9 +30,7 @@ RDEPENDS_${PN} = "python \
 "
 
 FILES_${PN} = " \
-    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/__init__.py* \
-    ${libdir}/${PYTHON_DIR}/site-packages/autobahn/util.py* \
-    ${libdir}/${PYTHON_DIR}/site-packages/autobahn-0.10.5-py2.7.egg/ \
+    ${libdir}/${PYTHON_DIR}/site-packages/autobahn \
     "
 
 FILES_${PN}-twisted = " \
