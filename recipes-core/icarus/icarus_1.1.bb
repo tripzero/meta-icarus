@@ -11,7 +11,6 @@ SRCREV_icarus = "6f742ac796a2d61c911d970a37701b03965c7156"
 
 S = "${WORKDIR}/git/python"
 
-inherit distutils
 
 SRC_URI[md5sum] = "https://github.com/tripzero/icarus"
 SRC_URI[sha256sum] = "https://github.com/tripzero/icarus"

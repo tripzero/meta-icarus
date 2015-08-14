@@ -17,7 +17,8 @@ SRC_URI[md5sum] = "5bd6c7d7d63352432a60721ba67b4ac9ee0974cc"
 SRC_URI[sha256sum] = "https://github.com/ryankapur/icarus"
 
 DEPENDS = "iotivity-node"
-RDEPENDS_${PN} = "iotivity-node, ws"
+RDEPENDS_${PN} = "iotivity-node \
+ ws"
                   
 RDEPENDS_${PN}_class-native = ""
 
